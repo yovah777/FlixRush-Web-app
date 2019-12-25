@@ -1,0 +1,3 @@
+# FlixRush-Web-app
+Movie/TV show app
+The web application ‘flixRush’ is a movie & TV show search engine.  Users that are registered with the site have the privilege to see their search results displayed in an organized template format on flixRush and receive in depth information about their movie/show.  Users that are not registered can still search for movies/shows but will not be able to see the customized detailed format of specific movies.  They have the option to going to IMDB to see some details about their search.  If they click anywhere else, they will be redirected to a log-in page.  The application encourages new users to register so that they may enjoy full access.
