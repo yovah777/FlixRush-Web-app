@@ -1,0 +1,60 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Profile</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  {% load crispy_forms_tags %}
+  {%block content%}
+  {% include 'Movies/header.html' %}
+</head>
+
+<body>
+   {% if messages %}
+     {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+          {{ message }}
+        </div>
+      {% endfor %}
+   {% endif %}
+
+   <!-- Profile Form Page -->
+<section class="section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-md-5 mx-auto">
+                <div class="card padding-card">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">{{user.username}} Profile Page</h5>
+                            <form method = "POST" enctype="multipart/form-data">
+                                {%csrf_token%}
+                                <fieldset class = form-group>
+                                    <legend class="border-bottom mb-4">Update</legend>
+                                    {{ u_form|crispy }}
+                                </fieldset>
+                                <div class = "form-group">
+                                    <button type = "submit">Update</button>
+                                </div>
+                            </form>
+                            <small class="text-muted">
+                                Already have an account? <a class="ml-2" href="#">Sign in</a>
+                             </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- End Profile -->
+
+  {% endblock content%}
+  <footer>
+    {% include 'Movies/footer.html' %}
+  </footer>
+</body>
+</html>

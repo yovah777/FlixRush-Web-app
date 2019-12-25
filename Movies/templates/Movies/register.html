@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Sign Up</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+    {% include 'Movies/header.html' %}
+</head>
+
+<body>
+{% load crispy_forms_tags %}
+
+<!-- Register -->
+<section class="section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-md-5 mx-auto">
+                <div class="card padding-card">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">Register</h5>
+                            <form method = "POST">
+                                {%csrf_token%}
+                                <fieldset class = form-group>
+                                    <legend class="border-bottom mb-4">Join Today</legend>
+                                    {{ form|crispy }}
+                                </fieldset>
+                                <div class = "form-group">
+                                    <button type = "submit">Sign Up</button>
+                                </div>
+                            </form>
+                            <small class="text-muted">
+                                Already have an account? <a class="ml-2" href="#">Sign in</a>
+                             </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- End Register -->
+
+  <footer>
+      {% include 'Movies/footer.html' %}
+  </footer>
+</body>
+</html>
